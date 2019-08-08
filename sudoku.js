@@ -7,18 +7,24 @@ for(key in data) {
         arr.push (data[key]);
         // console.log(value);
     }
-}var data1= arr;
-fs.writeFile('sudoku_puzzles.txt', data1, (err) => {  
+}
+var arrayData= arr;
+fs.writeFile('sudoku_puzzles.txt', arrayData, (err) => {  
     if (err) throw err; 
-}) 
-for (let i = 0; i < data1.length; i++){
-	for (let j=0; j< i; j++){
-		console.log(data1[i][0]);
-		if (data1[i][0] == 0){
-			console.log("zero hai");
-		}
-		else{
-			console.log("no");
+}); 
+
+function sudokuPuzzle(puzzle){
+	// console.log(puzzle);
+	var obj = {};
+	for (let vert = 0; vert < puzzle.length; vert++){
+		for (let horz=0; horz< puzzle.length; horz++){
+			if (puzzle[vert][horz] == 0){
+				return puzzle[vert][horz]
+			}
+			else{
+				return "not zero";
+			}
 		}
 	}
 }
+console.log(sudokuPuzzle(arrayData));
