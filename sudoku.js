@@ -17,7 +17,7 @@ function sudokuPuzzle(puzzle) {
 	var impossibleNumber = {};
 	// this loop going for whole 81 boxes.
 	do {
-		emptyCell = 0;
+		var emptyCell = 0;
 		// this loop for rows
 		for (var horz = 0; horz < puzzle.length; horz++) {
 			// this loop for columns
